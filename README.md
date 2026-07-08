@@ -1,2 +1,1 @@
-# UltraPositioningSheet
-McDonald's Positioning Sheet
+v0.2 trial
