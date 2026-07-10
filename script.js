@@ -1,1 +1,3 @@
-const c=[];function addCrew(){let n=crewName.value.trim();if(!n)return;c.push(n);crewName.value='';crewList.innerHTML=c.map(x=>'<li>'+x+'</li>').join('');}
+let crew=[],sel='';function draw(){crews.innerHTML='';crew.forEach(n=>{let b=document.createElement('button');b.textContent=n;b.className=sel==n?'sel':'';b.onclick=()=>{sel=n;draw()};crews.appendChild(b)});}
+function addCrew(){if(name.value){crew.push(name.value);name.value='';draw();}}
+document.querySelectorAll('.card').forEach(c=>c.onclick=()=>{if(sel)c.querySelector('span').textContent=sel;});draw();
