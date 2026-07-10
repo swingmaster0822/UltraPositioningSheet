@@ -1,1 +1,1 @@
-body{font-family:sans-serif;padding:12px}.card{border:1px solid #999;padding:8px;margin:6px;border-radius:8px}
+.board{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pos{border:1px solid #888;padding:12px;border-radius:8px}
