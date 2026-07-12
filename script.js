@@ -1,3 +1,8 @@
-let crew=[],sel='';function draw(){crews.innerHTML='';crew.forEach(n=>{let b=document.createElement('button');b.textContent=n;b.className=sel==n?'sel':'';b.onclick=()=>{sel=n;draw()};crews.appendChild(b)});}
-function addCrew(){if(name.value){crew.push(name.value);name.value='';draw();}}
-document.querySelectorAll('.card').forEach(c=>c.onclick=()=>{if(sel)c.querySelector('span').textContent=sel;});draw();
+
+const crews=['山田','佐藤','鈴木','原田'];
+const positions=['Grill','Assembler','Fryer','Counter'];
+let sel=null;
+const c=document.getElementById('crew'),p=document.getElementById('pos');
+crews.forEach(n=>{let d=document.createElement('button');d.textContent=n;d.onclick=()=>{sel=n;document.querySelectorAll('#crew button').forEach(x=>x.classList.remove('active'));d.classList.add('active')};c.appendChild(d);});
+positions.forEach(n=>{let d=document.createElement('div');d.className='item';d.textContent=n+': 空き';d.onclick=()=>{if(sel)d.textContent=n+': '+sel};p.appendChild(d);});
+function resetAll(){document.querySelectorAll('.item').forEach((e,i)=>e.textContent=positions[i]+': 空き');}
